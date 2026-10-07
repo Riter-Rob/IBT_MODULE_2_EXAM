@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: futura, sans-serif;
   background: #f6f8ff;
   margin: 0;
   padding: 10px;
@@ -42,6 +42,7 @@ header a {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  border: none;
 }
 
 .search-area button {
@@ -61,7 +62,7 @@ header a {
 
 .products-sec {
   flex: 1;
-  background: white;
+  background: rgba(117, 110, 104, 0.229);
   padding: 15px;
   border-radius: 10px;
 }
@@ -80,7 +81,7 @@ header a {
 }
 
 .card {
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
@@ -106,7 +107,7 @@ header a {
 }
 
 .price {
-  color: #2563ff;
+  color: #0610a8;
   font-weight: bold;
 }
 
@@ -117,12 +118,17 @@ header a {
   border: none;
   border-radius: 5px;
   color: white;
-  background: #2563ff;
+  background: #085a31;
   cursor: pointer;
 }
 
 .card button.remove-btn {
-  background: #dc2626;
+  background: #672525;
+}
+.clearWishBtn {
+  padding: 8px;
+  background: #672525;
+  color: white;
 }
 
 #msg {

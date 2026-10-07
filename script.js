@@ -1,4 +1,3 @@
-// the one state object
 const state = {
   products: [],
   wishlist: [],
@@ -12,7 +11,7 @@ const searchBox = document.getElementById("search-box");
 const searchBtn = document.getElementById("search-btn");
 const wishNum = document.getElementById("wish-num");
 
-
+const API="https://dummyjson.com/products";
 function saveWish() {
   localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
 }
@@ -29,7 +28,7 @@ async function getProducts() {
   msg.textContent = "Loading products...";
 
   try {
-    const res = await fetch("https://dummyjson.com/products");
+    const res = await fetch(API);
 
     if (!res.ok) {
       throw new Error("Something went wrong");
@@ -61,7 +60,7 @@ function showProducts() {
         <img src="${item.thumbnail}" alt="${item.title}">
         <h3>${item.title}</h3>
         <p>${item.category}</p>
-        <p><span class="price">$${item.price}</span> | ⭐ ${item.rating}</p>
+        <p><span class="price">ETB ${item.price}</span> Rate ${item.rating}</p>
         <button onclick="addWish(${item.id})">Add to Wishlist</button>
       </div>
     `;
@@ -72,17 +71,18 @@ function showWishlist() {
   wishNum.textContent = state.wishlist.length;
 
   if (state.wishlist.length === 0) {
-    wishList.innerHTML = "<p>Your wishlist is empty.</p>";
+    wishList.innerHTML = "<p>wishlist is empty.</p>";
     return;
   }
 
   wishList.innerHTML = state.wishlist.map(function (item) {
     return `
+     <button class="clearWishBtn" onclick="clearWish()">Clear Wishlist  </button>
       <div class="card">
         <img src="${item.thumbnail}" alt="${item.title}">
         <h3>${item.title}</h3>
         <p>${item.category}</p>
-        <p><span class="price">$${item.price}</span> | ${item.rating}</p>
+        <p><span class="price">ETB ${item.price}</span> Rate ${item.rating}</p>
         <button class="remove-btn" onclick="removeWish(${item.id})">Remove</button>
       </div>
     `;
@@ -107,13 +107,7 @@ function addWish(id) {
   showWishlist();
 }
 
-function removeWish(id) {
-  state.wishlist = state.wishlist.filter(function (item) {
-    return item.id !== id;
-  });
-  saveWish();
-  showWishlist();
-}
+
 
 
 function doSearch() {
@@ -133,3 +127,18 @@ async function init() {
 }
 
 init();
+
+
+function removeWish(id) {
+  state.wishlist = state.wishlist.filter(function (item) {
+    return item.id !== id;
+  });
+  saveWish();
+  showWishlist();
+}
+
+function clearWish() {
+  state.wishlist = [];
+  saveWish();
+  showWishlist();
+}
