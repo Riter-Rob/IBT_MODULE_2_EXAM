@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Smart Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Smart Shop</h1>
+    <a href="#wish-sec">Wishlist (<span id="wish-num">0</span>)</a>
+  </header>
+
+  <main>
+    <section class="search-area">
+      <input type="text" id="search-box" placeholder="Search products...">
+      <button id="search-btn">Search</button>
+    </section>
+
+    <div class="main-content">
+      <section class="products-sec">
+        <h2>Products</h2>
+        <p id="msg"></p>
+        <div id="prod-list" class="prod-grid"></div>
+      </section>
+
+      <section class="wish-sec" id="wish-sec">
+        <h2>My Wishlist</h2>
+        <div id="wish-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Smart Shop</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
