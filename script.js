@@ -82,7 +82,7 @@ function showWishlist() {
         <img src="${item.thumbnail}" alt="${item.title}">
         <h3>${item.title}</h3>
         <p>${item.category}</p>
-        <p><span class="price">$${item.price}</span> | ⭐ ${item.rating}</p>
+        <p><span class="price">$${item.price}</span> | ${item.rating}</p>
         <button class="remove-btn" onclick="removeWish(${item.id})">Remove</button>
       </div>
     `;

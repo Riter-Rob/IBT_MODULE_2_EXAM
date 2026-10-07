@@ -4,7 +4,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #a8bdfe;
+  background: #f6f8ff;
   margin: 0;
   padding: 10px;
 }
@@ -22,13 +22,13 @@ header {
 header a {
   color: white;
   text-decoration: none;
-  background: #3a4458;
+  background: #000000;
   padding: 8px 14px;
   border-radius: 8px;
 }
 
 .search-area {
-  background: white;
+  background: rgb(231, 230, 230);
   padding: 12px;
   border-radius: 10px;
   margin: 10px 0;
